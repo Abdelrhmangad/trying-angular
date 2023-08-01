@@ -1,0 +1,12 @@
+<h2 *ngIf="deletedPdts">Deleted Products {{ deletedPdts.length }}</h2>
+<div class="deleted_pdt" *ngFor="let product of deletedPdts">
+  <button class="restoreBtn" (click)="restore(product)">restore</button>
+  <h3>
+    <a [title]="product.name + product.description">
+      {{ product.name }}
+    </a>
+  </h3>
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+  <app-product-alerts [product]="product" [productName]="product.name">
+  </app-product-alerts>
+</div>

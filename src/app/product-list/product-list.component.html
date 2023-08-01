@@ -1,0 +1,27 @@
+<h2 *ngIf="productsLength !== 0">Products {{ productsLength }}</h2>
+<h2 *ngIf="productsLength == 0">No products here</h2>
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + product.description">
+      {{ product.name }}
+    </a>
+  </h3>
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+  <button type="button" (click)="share()">Share</button>
+  <app-product-alerts
+    [product]="product"
+    [productName]="product.name"
+    (notify)="onNotify()"
+  >
+  </app-product-alerts>
+
+  <button class="danger" (click)="deletePdt(product.id)">Delete Pdt</button>
+</div>
+<br />
+<br />
+<hr />
+
+<app-deleted-products
+  [deletedPdts]="deletedPdts"
+  (resotrePdt)="addPdt($event)"
+></app-deleted-products>

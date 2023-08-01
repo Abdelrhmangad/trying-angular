@@ -1,27 +1,23 @@
-<h2 *ngIf="productsLength !== 0">Products {{ productsLength }}</h2>
-<h2 *ngIf="productsLength == 0">No products here</h2>
-<div *ngFor="let product of products">
-  <h3>
-    <a [title]="product.name + product.description">
-      {{ product.name }}
-    </a>
-  </h3>
-  <p *ngIf="product.description">Description: {{ product.description }}</p>
-  <button type="button" (click)="share()">Share</button>
-  <app-product-alerts
-    [product]="product"
-    [productName]="product.name"
-    (notify)="onNotify()"
-  >
-  </app-product-alerts>
+<div class="container mx-auto">
+  <h2 *ngIf="productsLength !== 0">Products {{ productsLength }}</h2>
+  <h2 *ngIf="productsLength == 0">No products here</h2>
+  <div class="bg-gray-100 mb-2 p-2 rounded-sm border-2 border-blue-200" *ngFor="let product of products">
+    <span class="text-lg font-bold mb-0 pb-0">
+      <a [title]="product.name + product.description">
+        {{ product.name }}
+      </a>
+    </span>
+    <p *ngIf="product.description">Description: {{ product.description }}</p>
+    <div class="flex gap-3 items-center justify-start">
+      <button class="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded-md" type="button" (click)="share()">Share</button>
+      <app-product-alerts [product]="product" [productName]="product.name" (notify)="onNotify()">
+      </app-product-alerts>
+      <button class="bg-red-400 hover:bg-red-500 text-white px-4 py-2 rounded-md" (click)="deletePdt(product.id)">Delete Pdt</button>
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr />
 
-  <button class="danger" (click)="deletePdt(product.id)">Delete Pdt</button>
+  <app-deleted-products [deletedPdts]="deletedPdts" (resotrePdt)="addPdt($event)"></app-deleted-products>
 </div>
-<br />
-<br />
-<hr />
-
-<app-deleted-products
-  [deletedPdts]="deletedPdts"
-  (resotrePdt)="addPdt($event)"
-></app-deleted-products>

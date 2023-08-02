@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FeaturedCardsComponent } from './home-page/featured-cards/featured-cards.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TeamsComponent } from './teams/teams.component';
+import { TeamMemberDetailsComponent } from './teams/team-member-details/team-member-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ProductDetailsComponent,
     HomePageComponent,
     PageNotFoundComponent,
-    FeaturedCardsComponent
+    FeaturedCardsComponent,
+    TeamsComponent,
+    TeamMemberDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RouterModule.forRoot([
       { path: '', component: HomePageComponent },
       { path: 'products', component: ProductListComponent },
+      { path: 'teams', component: TeamsComponent },
+      { path: 'teams/:teamMemberName', component: TeamsComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       //Wild Card Route for 404 request
       {

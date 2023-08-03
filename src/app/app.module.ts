@@ -14,6 +14,7 @@ import { FeaturedCardsComponent } from './home-page/featured-cards/featured-card
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TeamsComponent } from './teams/teams.component';
 import { TeamMemberDetailsComponent } from './teams/team-member-details/team-member-details.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TeamMemberDetailsComponent } from './teams/team-member-details/team-mem
     PageNotFoundComponent,
     FeaturedCardsComponent,
     TeamsComponent,
-    TeamMemberDetailsComponent
+    TeamMemberDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

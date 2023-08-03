@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Teams } from './teamsData';
 @Component({
   selector: 'app-teams',
@@ -6,6 +6,21 @@ import { Teams } from './teamsData';
   styleUrls: ['./teams.component.scss']
 })
 
-export class TeamsComponent {
+export class TeamsComponent implements OnInit {
   teams = Teams
+  newTeams:any = []
+
+  ngOnInit(): void {
+      this.logNewTeams()
+  }
+
+  logNewTeams() {
+    const tryNew = this.teams.map(each => {
+      return {
+        ...each,
+        full_name: each.name.split(' ').join('-'),
+      }
+    });
+    this.newTeams = tryNew
+  }
 }

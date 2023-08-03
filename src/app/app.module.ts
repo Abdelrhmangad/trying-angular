@@ -36,7 +36,7 @@ import { TeamMemberDetailsComponent } from './teams/team-member-details/team-mem
       { path: '', component: HomePageComponent },
       { path: 'products', component: ProductListComponent },
       { path: 'teams', component: TeamsComponent },
-      { path: 'teams/:teamMemberName', component: TeamsComponent },
+      { path: 'teams/:teamMemberName', component: TeamMemberDetailsComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       //Wild Card Route for 404 request
       {

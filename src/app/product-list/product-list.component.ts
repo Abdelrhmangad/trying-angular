@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { products, Product } from '../products';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -33,4 +34,10 @@ export class ProductListComponent {
     this.products = [...this.products, pdt];
     this.productsLength = this.products.length;
   }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+  }
+
+  constructor(private cartService: CartService) { }
 }

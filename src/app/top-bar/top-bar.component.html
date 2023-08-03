@@ -1,29 +1,36 @@
 <nav class="w-full bg-blue-300 px-3 py-2">
    <ul class="list-none flex items-center gap-4">
       <li class="text-lg hover:underline cursor-pointer">
-         <a href="/">
+         <a [routerLink]="">
             Home
          </a>
       </li>
       <li class="text-lg hover:underline cursor-pointer">
-         <a href="/products">
+         <a [routerLink]="'products'">
             Products
          </a>
       </li>
       <li class="text-lg hover:underline cursor-pointer">
-         <a href="/teams">
+         <a [routerLink]="'teams'">
             Team
          </a>
       </li>
       <li class="text-lg hover:underline cursor-pointer">
-         <a href="/contact">
+         <a [routerLink]="'contact'">
             Contact
          </a>
       </li>
       <li class="ms-auto">
-         <a title="logo" href="/">
+         <a title="logo" [routerLink]="">
             <img src="../../assets/logo.png" width="64px" height="64px" alt="logo" />
          </a>
+      </li>
+      <li class="relative">
+         <a class="flex items-center justify-center px-8 py-4" [routerLink]="'cart'">
+            <em class="material-icons">shopping_cart</em>
+            <span>Checkout</span>
+         </a>
+         <span class="rounded-full w-6 h-6 bg-red-700 text-white flex items-center justify-center absolute top-0 right-0" *ngIf="getCartLength()">{{ getCartLength() }}</span>
       </li>
    </ul>
 </nav>

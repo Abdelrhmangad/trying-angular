@@ -40,6 +40,7 @@ import { CartComponent } from './cart/cart.component';
       { path: 'teams', component: TeamsComponent },
       { path: 'teams/:teamMemberName', component: TeamMemberDetailsComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: 'cart', component: CartComponent },
       //Wild Card Route for 404 request
       {
         path: '**', pathMatch: 'full',

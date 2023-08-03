@@ -7,10 +7,7 @@ import { CartService } from '../cart.service';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent {
-  cartItemsLength = this.cartService.getItems().length
+  items = this.cartService.getItems();
 
-  getCartLength() {
-    return this.cartService.getCartLength();
-  }
   constructor(private cartService: CartService) { }
 }

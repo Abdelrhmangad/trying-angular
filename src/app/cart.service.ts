@@ -1,4 +1,5 @@
 import { Product } from './products';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 /* . . . */
 @Injectable({
@@ -19,6 +20,7 @@ export class CartService {
   }
 
   getCartLength() {
+    console.log("GET CART ITEMS LENGTH")
     return this.items.length;
   }
 
@@ -30,5 +32,13 @@ export class CartService {
     this.items = [];
     return this.items;
   }
+
+
+  getShippingPrices() {
+    return this.http.get<{ type: string, price: number }[]>('/assets/shipping.json');
+  }
+  constructor(
+    private http: HttpClient
+  ) { }
   /* . . . */
 }

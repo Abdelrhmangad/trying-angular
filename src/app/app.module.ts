@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -15,6 +16,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TeamsComponent } from './teams/teams.component';
 import { TeamMemberDetailsComponent } from './teams/team-member-details/team-member-details.component';
 import { CartComponent } from './cart/cart.component';
+import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
   declarations: [
@@ -29,10 +31,12 @@ import { CartComponent } from './cart/cart.component';
     FeaturedCardsComponent,
     TeamsComponent,
     TeamMemberDetailsComponent,
-    CartComponent
+    CartComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: HomePageComponent },
@@ -41,6 +45,7 @@ import { CartComponent } from './cart/cart.component';
       { path: 'teams/:teamMemberName', component: TeamMemberDetailsComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
+      { path: 'shipping', component: ShippingComponent },
       //Wild Card Route for 404 request
       {
         path: '**', pathMatch: 'full',

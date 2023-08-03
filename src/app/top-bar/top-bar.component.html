@@ -30,7 +30,7 @@
             <em class="material-icons">shopping_cart</em>
             <span>Checkout</span>
          </a>
-         <span class="rounded-full w-6 h-6 bg-red-700 text-white flex items-center justify-center absolute top-0 right-0" *ngIf="getCartLength()">{{ getCartLength() }}</span>
+         <span class="rounded-full w-6 h-6 bg-red-700 text-white flex items-center justify-center absolute top-0 right-0" *ngIf="items.length">{{ items.length }}</span>
       </li>
    </ul>
 </nav>

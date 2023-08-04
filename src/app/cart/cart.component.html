@@ -11,4 +11,23 @@
       <span class="ms-auto">{{ item.price | currency }}</span>
       <button class="ps-5 text-red-500" (click)="removeItem(i, item)"><em class="material-icons">delete</em></button>
    </div>
+
+   <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <div class="flex flex-col items-start justify-start mb-2">
+         <label class="text-xl" for="name">
+            Name
+         </label>
+         <input class="text-lg p-1 rounded-md border border-gray-700" id="name" type="text" formControlName="name">
+      </div>
+
+      <div class="flex flex-col items-start justify-start mb-2">
+         <label class="text-xl" for="address">
+            City
+         </label>
+         <input class="text-lg p-1 rounded-md border border-gray-700" id="address" type="text" formControlName="city">
+      </div>
+
+      <button class="bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded-md" type="submit">Purchase</button>
+
+   </form>
 </div>

@@ -9,7 +9,7 @@
    <div class="bg-gray-400 text-white border rounded-md max-w-sm p-5 mb-3 flex justify-between items-center" *ngFor="let item of items; index as i">
       <span>{{ item.name }}</span>
       <span class="ms-auto">{{ item.price | currency }}</span>
-      <button class="ps-5 text-red-500" (click)="removeItem(i, item)"><em class="material-icons">delete</em></button>
+      <button class="ps-5 text-red-500" (click)="removeItem(i)"><em class="material-icons">delete</em></button>
    </div>
 
    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">

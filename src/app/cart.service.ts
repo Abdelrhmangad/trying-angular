@@ -24,12 +24,13 @@ export class CartService {
     return this.items.length;
   }
 
-  removeItem(index: number, product: Product) {
+  removeItem(index: number) {
     return this.items.splice(index, 1)
   }
 
   clearCart() {
-    this.items = [];
+    this.items = this.items.splice(0, this.items.length);
+    this.items = []
     return this.items;
   }
 

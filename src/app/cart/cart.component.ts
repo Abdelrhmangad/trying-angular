@@ -29,8 +29,7 @@ export class CartComponent {
   }
 
 
-  removeItem(index: number, product: Product) {
-    console.log("CLCIUKED to remove")
-    this.cartService.removeItem(index, product)
+  removeItem(index: number) {
+    this.cartService.removeItem(index)
   }
 }
